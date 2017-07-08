@@ -4,5 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="viewBackground">#bdbdbd</color>
     <color name="movieTitleBackground">#7CB342</color>
 </resources>

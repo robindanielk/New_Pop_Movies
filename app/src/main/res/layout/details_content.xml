@@ -26,11 +26,7 @@
             android:textAllCaps="true"
             android:textStyle="bold" />
         
-        <View
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#bdbdbd"/>
+      <include layout="@layout/view_divider"/>
 
 
         <LinearLayout
@@ -96,10 +92,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#bdbdbd"/>
+        <include layout="@layout/view_divider"/>
 
 
         <TextView
@@ -107,6 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:padding="8dp"
+            android:gravity="center"
             android:text="@string/details_overview"
             android:textSize="20sp"
             android:fontFamily="monospace"

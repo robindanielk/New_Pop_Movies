@@ -46,9 +46,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:src="@drawable/ic_share"
+        android:src="@drawable/ic_favorite_border"
         app:layout_anchor="@id/details_appbar"
-        app:layout_anchorGravity="bottom|end" />
+        app:layout_anchorGravity="bottom|end"
+        android:clickable="true"/>
 
 </android.support.design.widget.CoordinatorLayout>
 
