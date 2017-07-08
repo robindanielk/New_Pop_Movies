@@ -15,82 +15,8 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/details_tv_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:fontFamily="sans-serif-condensed"
-            android:textSize="32sp"
-            android:textAllCaps="true"
-            android:textStyle="bold" />
-        
-      <include layout="@layout/view_divider"/>
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/details_release_date"
-                    android:fontFamily="monospace"
-
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textAllCaps="true"/>
-
-                <TextView
-                    android:paddingTop="8dp"
-                    android:id="@+id/details_tv_release_date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textAppearance="?android:textAppearanceMedium" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/details_rating"
-                    android:textSize="20sp"
-                    android:fontFamily="monospace"
-                    android:textAppearance="?android:textAppearanceMedium"
-                    android:textStyle="bold"
-                    android:textAllCaps="true"/>
-
-                <TextView
-                    android:paddingTop="8dp"
-                    android:id="@+id/details_tv_ratings"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textAppearance="?android:textAppearanceMedium" />
-            </LinearLayout>
-        </LinearLayout>
+        <include layout="@layout/activity_about"/>
 
         <include layout="@layout/view_divider"/>
 
@@ -116,13 +42,7 @@
             android:textAppearance="?android:textAppearanceMedium" />
 
 
-        <ImageView
-            android:id="@+id/details_cv_movie_image"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="16dp"
-            android:padding="8dp"
-            android:scaleType="centerCrop"/>
+
 
     </LinearLayout>
 

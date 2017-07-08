@@ -12,4 +12,7 @@
     <string name="details_overview">overview</string>
     <string name="details_release_date">release date</string>
     <string name="details_rating">rating</string>
+
+    <!--Menu items-->
+    <string name="menu_share_item">Share Movie</string>
 </resources>
