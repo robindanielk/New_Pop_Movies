@@ -1,5 +1,8 @@
 package com.example.user.popularmoviesapp.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -7,8 +10,7 @@ import com.google.gson.annotations.SerializedName;
  * Created by user on 6/12/2017.
  */
 
-public class MovieVideoResults
-{
+public class MovieVideoResults implements Parcelable {
 
     @SerializedName("key")
     @Expose
@@ -43,4 +45,37 @@ public class MovieVideoResults
     public void setSite(String site) {
         this.site = site;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.key);
+        dest.writeString(this.name);
+        dest.writeString(this.site);
+    }
+
+    public MovieVideoResults() {
+    }
+
+    protected MovieVideoResults(Parcel in) {
+        this.key = in.readString();
+        this.name = in.readString();
+        this.site = in.readString();
+    }
+
+    public static final Parcelable.Creator<MovieVideoResults> CREATOR = new Parcelable.Creator<MovieVideoResults>() {
+        @Override
+        public MovieVideoResults createFromParcel(Parcel source) {
+            return new MovieVideoResults(source);
+        }
+
+        @Override
+        public MovieVideoResults[] newArray(int size) {
+            return new MovieVideoResults[size];
+        }
+    };
 }

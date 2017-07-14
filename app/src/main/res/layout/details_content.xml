@@ -36,13 +36,32 @@
         <TextView
             android:id="@+id/details_tv_overview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="8dp"
             android:textAppearance="?android:textAppearanceMedium" />
 
+        <include layout="@layout/view_divider"/>
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/details_trailer"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            android:textAllCaps="true" />
+        
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/details_rv_videos"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginTop="8dp">
 
+        </android.support.v7.widget.RecyclerView>
 
+        <include layout="@layout/view_divider"/>
+
+        <include layout="@layout/reviews_layout"/>
 
     </LinearLayout>
 
