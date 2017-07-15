@@ -17,4 +17,21 @@
 
     <!--Menu items-->
     <string name="menu_share_item">Share Movie</string>
+
+    <!--Preference Screen-->
+    <string name="pref_list_title">Sort By</string>
+    <string name="pref_list_key" translatable="false">sortBy</string>
+
+    <!--Preference Screen Label-->
+    <string name="pref_list_label_popular">Popular</string>
+    <string name="pref_list_label_top_rated">Top Rated</string>
+    <string name="pref_list_label_favourites">Favourites</string>
+
+    <!--Preference Screen Label Values-->
+    <string name="pref_list_value_popular" translatable="false">popular</string>
+    <string name="pref_list_value_top_rated" translatable="false">top_rated</string>
+    <string name="pref_list_value_favourites" translatable="false">favourites</string>
+
+    <!--Menu Titles-->
+    <string name="menu_action_settings">Settings</string>
 </resources>
