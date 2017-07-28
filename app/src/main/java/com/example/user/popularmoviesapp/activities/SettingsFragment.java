@@ -22,19 +22,7 @@ public class SettingsFragment extends PreferenceFragmentCompat
 {
     private static final String LOG_TAG = SettingsFragment.class.getSimpleName();
 
-    /*Setting the preference Summary */
-    private void setPreferenceSummary(Preference preference,Object value)
-    {
-        String stringValue = value.toString();
-        ListPreference listPreference = (ListPreference) preference;
-        int prefIndex = listPreference.findIndexOfValue(stringValue);
-        if(prefIndex >= 0)
-        {
-            preference.setSummary(listPreference.getEntries()[prefIndex]);
-        }else{
-            Log.d(LOG_TAG,"Preference Summary Error");
-        }
-    }
+
 
 
 
@@ -47,7 +35,6 @@ public class SettingsFragment extends PreferenceFragmentCompat
         Preference p = prefScreen.getPreference(0);
         if(p instanceof ListPreference){
         String value = sharedPreferences.getString(p.getKey(),"");
-        setPreferenceSummary(p,value);
         }else
         {
             Log.d(LOG_TAG,"Invalid preference instance");

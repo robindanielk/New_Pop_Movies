@@ -6,7 +6,8 @@
         android:entries="@array/pref_list_label"
         android:entryValues="@array/pref_list_values"
         android:key="@string/pref_list_key"
-        android:title="@string/pref_list_title"/>
+        android:title="@string/pref_list_title"
+        android:summary="%s"/>
 
 
 
