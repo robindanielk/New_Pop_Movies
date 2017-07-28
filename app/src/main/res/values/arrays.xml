@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_list_label">
+        <item>@string/pref_list_label_popular</item>
+        <item>@string/pref_list_label_top_rated</item>
+        <item>@string/pref_list_label_favourites</item>
+    </string-array>
+
+    <string-array name="pref_list_values">
+        <item>@string/pref_list_value_popular</item>
+        <item>@string/pref_list_value_top_rated</item>
+        <item>@string/pref_list_value_favourites</item>
+    </string-array>
+</resources>

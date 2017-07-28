@@ -25,4 +25,5 @@
         android:paddingTop="15dp"
         android:textColor="@android:color/white"
         tools:text="Inception" />
+
 </RelativeLayout>
