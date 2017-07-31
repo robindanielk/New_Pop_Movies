@@ -22,7 +22,8 @@ public class TmdbRestClient
 
     private static String BASE_URL = "https://api.themoviedb.org/3/";
 
-    private MoviesApi.SortMovies sortMovies;
+    private MoviesApi.PopularMovies popularMovies;
+    private MoviesApi.TopRatedMovies topRatedMovies;
     private MoviesApi.MovieDetails movieDetails;
     private MoviesApi.MovieDetailReviews movieDetailReviews;
     private MoviesApi.MovieDetailVideos movieDetailVideos;
@@ -45,12 +46,21 @@ public class TmdbRestClient
         return instance;
     }
 
-    public MoviesApi.SortMovies getSortMoviesResponse()
+    public MoviesApi.PopularMovies getPopularMoviesResponse()
     {
-        if(sortMovies == null) {
-            sortMovies = retrofit.create(MoviesApi.SortMovies.class);
+        if(popularMovies == null) {
+            popularMovies = retrofit.create(MoviesApi.PopularMovies.class);
         }
-        return sortMovies;
+        return popularMovies;
+    }
+
+    public MoviesApi.TopRatedMovies getTopRatedMoviesResponse()
+    {
+        if(topRatedMovies == null)
+        {
+            topRatedMovies = retrofit.create(MoviesApi.TopRatedMovies.class);
+        }
+        return topRatedMovies;
     }
 
     public MoviesApi.MovieDetails getMovieDetailsResponse()

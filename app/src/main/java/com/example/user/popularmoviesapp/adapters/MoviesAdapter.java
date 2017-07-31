@@ -11,12 +11,14 @@ import android.widget.Toast;
 
 import com.example.user.popularmoviesapp.R;
 import com.example.user.popularmoviesapp.model.Movies;
+import com.example.user.popularmoviesapp.model.MoviesList;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Callback;
 
 /**
  * Created by user on 4/4/2017.
@@ -38,7 +40,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
         rootView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,"Not been implemented",Toast.LENGTH_SHORT);
+                Toast.makeText(context,"Not been implemented",Toast.LENGTH_SHORT).show();
             }
         });
         return holder;
@@ -74,7 +76,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
         }
     }
 
-    public MoviesAdapter(Context context,List<Movies> movies)
+    public MoviesAdapter(Context context, List<Movies> movies)
     {
         this.context = context;
         this.inflater = LayoutInflater.from(context);

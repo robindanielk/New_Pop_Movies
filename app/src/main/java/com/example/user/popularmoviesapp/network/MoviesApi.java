@@ -17,10 +17,16 @@ import retrofit2.http.Path;
 
 public class MoviesApi
 {
-    public interface SortMovies
+    public interface PopularMovies
     {
-        @GET("movie/{sort_by}")
-        Call<MoviesList> getSortedMovies(@Path("sort_by") String sortBy);
+        @GET("movie/popular")
+        Call<MoviesList> getPopularMovies();
+    }
+
+    public interface TopRatedMovies
+    {
+        @GET("movie/top_rated")
+        Call<MoviesList> getTopRatedMovies();
     }
 
     public interface MovieDetails

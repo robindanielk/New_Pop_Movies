@@ -22,23 +22,10 @@ public class SettingsFragment extends PreferenceFragmentCompat
 {
     private static final String LOG_TAG = SettingsFragment.class.getSimpleName();
 
-
-
-
-
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-
         addPreferencesFromResource(R.xml.pref_general);
-        SharedPreferences sharedPreferences  = getPreferenceScreen().getSharedPreferences();
-        PreferenceScreen prefScreen = getPreferenceScreen();
-        Preference p = prefScreen.getPreference(0);
-        if(p instanceof ListPreference){
-        String value = sharedPreferences.getString(p.getKey(),"");
-        }else
-        {
-            Log.d(LOG_TAG,"Invalid preference instance");
-        }
+
     }
 
 }
