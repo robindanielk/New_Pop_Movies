@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?android:attr/selectableItemBackground">
 
     <ImageView
         android:id="@+id/gv_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/gridview_thumbnail"
         android:scaleType="centerCrop"/>
 
     <TextView
@@ -24,6 +29,6 @@
         android:paddingRight="10dp"
         android:paddingTop="15dp"
         android:textColor="@android:color/white"
-        tools:text="Inception" />
+        tools:text="Inception"/>
 
 </RelativeLayout>

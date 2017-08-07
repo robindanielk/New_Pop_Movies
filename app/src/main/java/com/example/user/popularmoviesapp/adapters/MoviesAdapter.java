@@ -1,7 +1,9 @@
 package com.example.user.popularmoviesapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.user.popularmoviesapp.Helper.Constants;
 import com.example.user.popularmoviesapp.R;
+import com.example.user.popularmoviesapp.activities.DetailsActivity;
 import com.example.user.popularmoviesapp.model.Movies;
 import com.example.user.popularmoviesapp.model.MoviesList;
 import com.squareup.picasso.Picasso;
@@ -30,6 +34,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
     private LayoutInflater inflater;
     private Context context;
 
+    private static final String TAG = MoviesAdapter.class.getSimpleName();
     private static final String BASE_URL ="http://image.tmdb.org/t/p/w185/";
 
     @Override
@@ -73,6 +78,21 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
         public MyViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = getAdapterPosition();
+                    if(pos != RecyclerView.NO_POSITION)
+                    {
+                        Movies selectedMoviesPos = movies.get(pos);
+                        Intent intent  = new Intent(context, DetailsActivity.class);
+                        intent.putExtra(Constants.MOVIE_INTENT_ID,selectedMoviesPos);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(intent);
+                        Log.d(TAG,"Selected Movie Position " + selectedMoviesPos);
+                    }
+                }
+            });
         }
     }
 

@@ -8,6 +8,7 @@
     <string name="no_current_movies">No Movies Currently found!!</string>
     <string name="no_internet_connection">No internet Connection</string>
     <string name="error_in_callback">Error in receiving the JSON response Callback</string>
+    <string name="gridview_thumbnail">Thumbnail image of the movies</string>
 
     <!--Details Activity-->
     <string name="details_overview">overview</string>
@@ -15,6 +16,9 @@
     <string name="details_rating">rating</string>
     <string name="details_trailer">Trailers</string>
     <string name="details_review">Reviews</string>
+    <string name="backdrop_details">Backdrop Movie Image</string>
+    <string name="default_trailer_name">Trailer ..</string>
+    <string name="youtube_thumbnail">Youtube Thumbnail Images</string>
 
     <!--Menu items-->
     <string name="menu_share_item">Share Movie</string>

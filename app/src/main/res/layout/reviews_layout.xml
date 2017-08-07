@@ -35,7 +35,8 @@
             android:stepSize="0.5" />
     </LinearLayout>
 
-    <com.ms.square.android.expandabletextview.ExpandableTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.ms.square.android.expandabletextview.ExpandableTextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
         android:id="@+id/expandable_reviews_tv"
         android:layout_width="match_parent"
