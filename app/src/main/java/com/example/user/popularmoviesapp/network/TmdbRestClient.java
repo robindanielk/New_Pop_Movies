@@ -1,7 +1,7 @@
 package com.example.user.popularmoviesapp.network;
 
 import com.example.user.popularmoviesapp.BuildConfig;
-import com.example.user.popularmoviesapp.database.MoviesContentProvider;
+import com.facebook.stetho.okhttp3.StethoInterceptor;
 
 import java.io.IOException;
 
@@ -104,10 +104,12 @@ public class TmdbRestClient
                         Request.Builder builder = request.newBuilder()
                                 .url(url)
                                 .method(request.method(),request.body());
-                        request = builder.build();
+                        request = builder
+                                .build();
                         return chain.proceed(request);
                     }
                 })
+                .addNetworkInterceptor(new StethoInterceptor())
                 .build();
 
         retrofit = new Retrofit.Builder()
