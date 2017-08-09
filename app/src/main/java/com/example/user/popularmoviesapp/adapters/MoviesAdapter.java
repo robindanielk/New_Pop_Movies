@@ -27,7 +27,7 @@ import butterknife.ButterKnife;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHolder>
 {
-    private List<Movies> movies;
+    private List<Movies> moviesList;
     private Context context;
 
     private static final String TAG = MoviesAdapter.class.getSimpleName();
@@ -44,8 +44,9 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.originalTitle.setText(movies.get(position).getTitle());
-        String posterImage = BASE_URL + movies.get(position).getPosterPath();
+
+        holder.originalTitle.setText(moviesList.get(position).getTitle());
+        String posterImage = BASE_URL + moviesList.get(position).getPosterPath();
         Picasso.with(context)
                 .load(posterImage)
                 .error(R.drawable.no_movie_image)
@@ -55,10 +56,10 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
 
     @Override
     public int getItemCount() {
-        if(null == movies){
+        if(null == moviesList){
             return 0;
         }
-        return movies.size();
+        return moviesList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder
@@ -76,7 +77,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
 
                     if(pos != RecyclerView.NO_POSITION)
                     {
-                        Movies selectedMoviesPos = movies.get(pos);
+                        Movies selectedMoviesPos = moviesList.get(pos);
                         Intent intent  = new Intent(context, DetailsActivity.class);
                         intent.putExtra(Constants.MOVIE_INTENT_ID,selectedMoviesPos);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -91,13 +92,13 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
     public MoviesAdapter(Context context, List<Movies> movies)
     {
         this.context = context;
-        this.movies = movies;
+        this.moviesList = movies;
     }
 
     public void swapMovies(Context context, List<Movies> movies)
     {
         this.context = context;
-        this.movies = movies;
+        this.moviesList = movies;
         notifyDataSetChanged();
     }
 }
