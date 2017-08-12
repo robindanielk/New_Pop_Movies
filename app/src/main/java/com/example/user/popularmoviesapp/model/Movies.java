@@ -7,7 +7,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by user on 6/12/2017.
@@ -57,9 +56,7 @@ public class Movies implements Parcelable
     @Expose
     private Double voteAverage;
 
-    private ArrayList<MovieVideoResults> movieVideos = null;
 
-    private ArrayList<MovieReviewResults> movieReviews = null;
 
     public Boolean getAdult() {
         return adult;
@@ -83,23 +80,6 @@ public class Movies implements Parcelable
 
     public void setGenres(ArrayList<Genres> genres) {
         this.genres = genres;
-    }
-
-    public ArrayList<MovieVideoResults> getMovieVideos(){
-        return  movieVideos;
-    }
-
-    public void setMovieVideos(ArrayList<MovieVideoResults> movieVideos)
-    {
-        this.movieVideos = movieVideos;
-    }
-
-    public ArrayList<MovieReviewResults> getMovieReviews(){
-        return movieReviews;
-    }
-    public void setMovieReviews(ArrayList<MovieReviewResults> movieReviews)
-    {
-        this.movieReviews = movieReviews;
     }
 
     public Integer getId() {
@@ -130,7 +110,7 @@ public class Movies implements Parcelable
     public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
-    public Integer getRuntime() {
+    public  Integer getRuntime() {
         return runtime;
     }
 
@@ -183,8 +163,7 @@ public class Movies implements Parcelable
         dest.writeValue(this.adult);
         dest.writeString(this.backdropPath);
         dest.writeList(this.genres);
-        dest.writeList(this.movieVideos);
-        dest.writeList(this.movieReviews);
+
         dest.writeValue(this.id);
         dest.writeString(this.overview);
         dest.writeString(this.posterPath);
@@ -205,13 +184,6 @@ public class Movies implements Parcelable
         this.backdropPath = in.readString();
         this.genres = new ArrayList<Genres>();
         in.readList(this.genres, Genres.class.getClassLoader());
-
-        this.movieVideos = new ArrayList<MovieVideoResults>();
-        in.readList(this.movieVideos,MovieVideoResults.class.getClassLoader());
-
-        this.movieReviews = new ArrayList<MovieReviewResults>();
-        in.readList(this.movieReviews,MovieReviewResults.class.getClassLoader());
-
         this.id = (Integer) in.readValue(Integer.class.getClassLoader());
         this.overview = in.readString();
         this.posterPath = in.readString();

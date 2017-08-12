@@ -25,22 +25,24 @@
 
         <android.support.v7.widget.AppCompatRatingBar
             android:id="@+id/details_rating_bar"
-            style="?android:attr/ratingBarStyle"
+            style="?android:attr/ratingBarStyleSmall"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_weight="1"
             android:max="10"
             android:numStars="5"
-            android:stepSize="0.5" />
+            android:stepSize="2" />
     </LinearLayout>
 
     <com.ms.square.android.expandabletextview.ExpandableTextView
+
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
         android:id="@+id/expandable_reviews_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         expandableTextView:animDuration="200"
         expandableTextView:maxCollapsedLines="4">
 
