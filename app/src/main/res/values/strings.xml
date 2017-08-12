@@ -19,6 +19,7 @@
     <string name="backdrop_details">Backdrop Movie Image</string>
     <string name="default_trailer_name">Trailer ..</string>
     <string name="youtube_thumbnail">Youtube Thumbnail Images</string>
+    <string name="empty_reviews">Reviews yet to be updated</string>
 
     <!--Menu items-->
     <string name="menu_share_item">Share Movie</string>

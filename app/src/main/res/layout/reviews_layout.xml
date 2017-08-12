@@ -3,64 +3,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginTop="8dp"
+    android:layout_marginTop="4dp"
     android:orientation="vertical"
     tools:showIn = "@layout/details_content">
 
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/reviews_author"
+        tools:text="Author"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            android:text="@string/details_review"
-            android:textAllCaps="true"
-            android:textSize="20sp" />
-
-        <android.support.v7.widget.AppCompatRatingBar
-            android:id="@+id/details_rating_bar"
-            style="?android:attr/ratingBarStyleSmall"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_weight="1"
-            android:max="10"
-            android:numStars="5"
-            android:stepSize="2" />
-    </LinearLayout>
-
-    <com.ms.square.android.expandabletextview.ExpandableTextView
-
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/expandable_reviews_tv"
+        android:layout_marginTop="2dp"
+        android:fontFamily="monospace"
+        android:layout_gravity="left"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/reviews_content"
+        tools:text="Content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        expandableTextView:animDuration="200"
-        expandableTextView:maxCollapsedLines="4">
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center" />
 
-        <TextView
-            android:id="@+id/expandable_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:textColor="#666666"
-            android:textSize="16sp" />
-
-        <ImageButton
-            android:id="@+id/expand_collapse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
-            android:background="@android:color/transparent"
-            android:padding="16dp" />
-    </com.ms.square.android.expandabletextview.ExpandableTextView>
+    <TextView
+        android:id="@+id/reviews_empty_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
 </LinearLayout>
