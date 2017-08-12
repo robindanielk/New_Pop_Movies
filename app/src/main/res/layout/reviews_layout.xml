@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginTop="4dp"
+    android:layout_marginTop="8dp"
     android:orientation="vertical"
     tools:showIn = "@layout/details_content">
 
@@ -13,8 +13,6 @@
         tools:text="Author"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:fontFamily="monospace"
         android:layout_gravity="left"
         android:textStyle="bold" />
     <TextView
@@ -22,12 +20,7 @@
         tools:text="Content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed"
-        android:gravity="center" />
+        android:elegantTextHeight="true"/>
 
-    <TextView
-        android:id="@+id/reviews_empty_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+
 </LinearLayout>

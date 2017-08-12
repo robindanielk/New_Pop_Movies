@@ -92,6 +92,11 @@
             android:id="@+id/reviews_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/reviews_empty_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"/>
 
     </LinearLayout>
 
