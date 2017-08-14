@@ -8,4 +8,5 @@
     <color name="movieTitleBackground">#7CB342</color>
     <color name="pink">#EC407A</color>
     <color name="indigo">#3F51B5</color>
+    <color name="white">#ffffff</color>
 </resources>
