@@ -59,6 +59,13 @@
 
         </android.support.v7.widget.RecyclerView>
 
+        <TextView
+            android:id="@+id/empty_trailers_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textStyle="italic"/>
+
         <include layout="@layout/view_divider"/>
 
         <LinearLayout
@@ -76,16 +83,14 @@
                 android:textAllCaps="true"
                 android:textSize="20sp" />
 
-            <RatingBar
+            <android.support.v7.widget.AppCompatRatingBar
                 android:id="@+id/details_rating_bar"
-                style="@android:style/Widget.DeviceDefault.RatingBar.Small"
+                style="?android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:isIndicator="true"
-                android:numStars="5"
-                android:stepSize="0.5"
-                android:theme="@style/RatingBar" />
+                android:rating="2.5"
+                android:stepSize="0.1" />
         </LinearLayout>
 
         <android.support.v7.widget.RecyclerView

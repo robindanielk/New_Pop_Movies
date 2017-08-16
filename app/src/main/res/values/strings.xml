@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PopularMoviesApp</string>
+    <string name="app_name">MyMoviesApp</string>
     <!--Main activity Strings-->
     <string name="movie_api">73c0644c92763ce7863dcc4fb6592334</string>
     <string name="sort_by_revenue_default">revenue.desc</string>
@@ -21,6 +21,7 @@
     <string name="youtube_thumbnail">Youtube Thumbnail Images</string>
     <string name="empty_reviews">Reviews yet to be updated</string>
     <string name="share_title">Share the link with..</string>
+    <string name="empty_trailers_text">Trailers yet to be updated</string>
 
     <!--Menu items-->
     <string name="menu_share_item">Share Movie</string>
