@@ -9,6 +9,7 @@
     <string name="no_internet_connection">No internet Connection</string>
     <string name="error_in_callback">Error in receiving the JSON response Callback</string>
     <string name="gridview_thumbnail">Thumbnail image of the movies</string>
+    <string name="favorite_empty">No favorite Movies Added</string>
 
     <!--Details Activity-->
     <string name="trailers_empty_text">Trailers are currently empty!</string>
@@ -43,4 +44,10 @@
 
     <!--Menu Titles-->
     <string name="menu_action_settings">Settings</string>
+
+    <!--Snackbar results-->
+    <string name="operation_failed">Operation failed !!!!</string>
+    <string name="movies_added">Added Movie as Favorite</string>
+    <string name="movies_removed">Removed Movies as Favorites</string>
+
 </resources>
