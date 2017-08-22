@@ -42,7 +42,7 @@
     <include layout="@layout/details_content" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/details_fab_share"
+        android:id="@+id/details_fab_favorites"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"

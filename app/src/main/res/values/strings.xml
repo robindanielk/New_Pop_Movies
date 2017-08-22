@@ -11,6 +11,7 @@
     <string name="gridview_thumbnail">Thumbnail image of the movies</string>
 
     <!--Details Activity-->
+    <string name="trailers_empty_text">Trailers are currently empty!</string>
     <string name="details_overview">overview</string>
     <string name="details_release_date">release date</string>
     <string name="details_rating">rating</string>
