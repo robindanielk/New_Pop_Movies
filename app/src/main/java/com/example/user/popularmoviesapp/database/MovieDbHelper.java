@@ -23,17 +23,16 @@ public class MovieDbHelper extends SQLiteOpenHelper
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        final String CREATE_TABLE =
+        final String CREATE_TABLE_MOVIES =
                 "CREATE TABLE " + MoviesEntry.TABLE_NAME + " (" +
-                        MoviesEntry._ID  + " INTEGER PRIMARY KEY, " +
-                        MoviesEntry.COLUMN_MOVIE_ID + " INTEGER, " +
+                        MoviesEntry.COLUMN_MOVIE_ID + " INTEGER PRIMARY KEY, " +
                         MoviesEntry.COLUMN_MOVIE_TITLE + " TEXT, "  +
                         MoviesEntry.COLUMN_MOVIE_DURATION + " TEXT NOT, " +
                         MoviesEntry.COLUMN_MOVIE_USER_RATING + " REAL, " +
                         MoviesEntry.COLUMN_MOVIE_BACKDROP + " TEXT, " +
                         MoviesEntry.COLUMN_MOVIE_POSTER + " TEXT,"  +
                         MoviesEntry.COLUMN_MOVIE_RELEASE_DATE + " TEXT " + ")";
-        db.execSQL(CREATE_TABLE);
+        db.execSQL(CREATE_TABLE_MOVIES);
     }
 
     @Override
