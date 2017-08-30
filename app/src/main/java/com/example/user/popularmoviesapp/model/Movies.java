@@ -176,12 +176,11 @@ public class Movies implements Parcelable
         dest.writeValue(this.voteAverage);
     }
 
-    public Movies(int id,String title,String releaseDate,Integer duration,
+    public Movies(int id,String title,String releaseDate,
                   double userRating,String backdropPath,String poster) {
         setId(id);
         setTitle(title);
         setReleaseDate(releaseDate);
-        setRuntime(duration);
         setVoteAverage(userRating);
         setBackdropPath(backdropPath);
         setPosterPath(poster);

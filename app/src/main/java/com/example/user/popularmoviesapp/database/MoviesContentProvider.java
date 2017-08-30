@@ -106,6 +106,7 @@ public class MoviesContentProvider extends ContentProvider {
                 id = db.insert(MovieContract.MoviesEntry.TABLE_NAME,null,values);
                 if(id>0){
                     retUri = MovieContract.MoviesEntry.buildMovieUri(id);
+                    getContext().getContentResolver().notifyChange(uri,null);
                 }else{
                     db.close();
                     throw new UnsupportedOperationException("Unable to insert rows into : " +uri);
@@ -117,7 +118,7 @@ public class MoviesContentProvider extends ContentProvider {
                 db.close();
                 throw new UnsupportedOperationException("Unknown uri " + uri);
         }
-        getContext().getContentResolver().notifyChange(uri,null);
+
         return retUri;
     }
 
@@ -134,7 +135,7 @@ public class MoviesContentProvider extends ContentProvider {
             case CODE_MOVIE:
                 deletedRows = db.delete(MovieContract.MoviesEntry.TABLE_NAME,
                         selection,
-                        selectionArgs);
+                        null);
                 break;
             default:
                 throw new UnsupportedOperationException("Unsupported Deletion Operation : " +uri);

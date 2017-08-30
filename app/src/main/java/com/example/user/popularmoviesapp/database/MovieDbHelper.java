@@ -14,7 +14,7 @@ public class MovieDbHelper extends SQLiteOpenHelper
 {
     public static final String DATABASE_NAME = "favorites.db";
 
-    public static final int DATABASE_VERSION = 2;
+    public static final int DATABASE_VERSION = 6;
 
     public MovieDbHelper(Context context)
     {
@@ -24,9 +24,9 @@ public class MovieDbHelper extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase db) {
         final String CREATE_TABLE_MOVIES = "CREATE TABLE " + MoviesEntry.TABLE_NAME + " (" +
-                        MoviesEntry.COLUMN_MOVIE_ID + " INTEGER PRIMARY KEY, " +
+                        MoviesEntry._ID + " INTEGER PRIMARY KEY, " +
+                        MoviesEntry.COLUMN_MOVIE_ID + " INTEGER, " +
                         MoviesEntry.COLUMN_MOVIE_TITLE + " TEXT, "  +
-                        MoviesEntry.COLUMN_MOVIE_DURATION + " TEXT, " +
                         MoviesEntry.COLUMN_MOVIE_USER_RATING + " REAL, " +
                         MoviesEntry.COLUMN_MOVIE_BACKDROP + " TEXT, " +
                         MoviesEntry.COLUMN_MOVIE_POSTER + " TEXT, "  +

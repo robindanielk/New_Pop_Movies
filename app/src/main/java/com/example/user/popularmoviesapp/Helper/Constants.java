@@ -13,5 +13,6 @@ public class Constants
     public static final String MOVIE_SAVED_INSTANCE_KEY = "movie_saved_instance";
     public static final String YOUTUBE_APP = "vnd.youtube:";
     public static final String YOUTUBE_URL_BROWSER = "http://www.youtube.com/watch?v=";
+    public static final String SHARED_PREF_NAME = "com.example.user.popularmoviesapp.activities.DetailsActivity";
 
 }
