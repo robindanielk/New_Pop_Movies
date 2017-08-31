@@ -105,7 +105,7 @@ public class MoviesContentProvider extends ContentProvider {
             case CODE_MOVIE:
                 id = db.insert(MovieContract.MoviesEntry.TABLE_NAME,null,values);
                 if(id>0){
-                    retUri = MovieContract.MoviesEntry.buildMovieUri(id);
+                    retUri = ContentUris.withAppendedId(MovieContract.MoviesEntry.CONTENT_URI,id);
                     getContext().getContentResolver().notifyChange(uri,null);
                 }else{
                     db.close();
@@ -125,27 +125,25 @@ public class MoviesContentProvider extends ContentProvider {
     @Override
     public int delete(@NonNull Uri uri, @Nullable String selection, @Nullable String[] selectionArgs) {
         final SQLiteDatabase db = movieDbHelper.getWritableDatabase();
-        int deletedRows;
-        if(selection == null)
-        {
-            selection = "1";
-        }
+        int deletedRows= 0;
         switch (sUriMatcher.match(uri))
         {
             case CODE_MOVIE:
                 deletedRows = db.delete(MovieContract.MoviesEntry.TABLE_NAME,
                         selection,
-                        null);
+                        selectionArgs);
                 break;
             default:
+                db.close();
                 throw new UnsupportedOperationException("Unsupported Deletion Operation : " +uri);
         }
 
-        if(deletedRows > 0)
+        if(deletedRows != 0)
         {
-            db.close();
+
             getContext().getContentResolver().notifyChange(uri,null);
         }
+        db.close();
         return deletedRows;
     }
 
