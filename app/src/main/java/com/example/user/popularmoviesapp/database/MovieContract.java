@@ -1,6 +1,5 @@
 package com.example.user.popularmoviesapp.database;
 
-import android.content.ContentUris;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
@@ -37,12 +36,6 @@ public class MovieContract {
         public static final String COLUMN_MOVIE_RELEASE_DATE = "release_date";
         public static final String COLUMN_MOVIE_BACKDROP = "backdrop";
         public static final String COLUMN_MOVIE_POSTER = "poster";
-
-        /*Function to build a Uri to find a specific Movie*/
-        public static Uri buildMovieUri(long id)
-        {
-            return ContentUris.withAppendedId(CONTENT_URI,id);
-        }
 
     }
 }
