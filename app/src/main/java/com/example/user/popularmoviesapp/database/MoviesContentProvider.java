@@ -47,7 +47,7 @@ public class MoviesContentProvider extends ContentProvider {
         Cursor retCursor;
         switch (sUriMatcher.match(uri))
         {
-            case CODE_MOVIE:
+            case CODE_MOVIE: {
                 retCursor = db.query(MovieContract.MoviesEntry.TABLE_NAME,
                         projection,
                         selection,
@@ -55,9 +55,21 @@ public class MoviesContentProvider extends ContentProvider {
                         null,
                         null,
                         sortOrder
-                        );
+                );
                 break;
+            }
 
+            case CODE_MOVIE_ID: {
+                retCursor = db.query(
+                        MovieContract.MoviesEntry.TABLE_NAME,
+                        projection,
+                        MovieContract.MoviesEntry.COLUMN_MOVIE_ID + " = ?",
+                        new String[]{ String.valueOf(ContentUris.parseId(uri)) },
+                        null,
+                        null,
+                        sortOrder);
+                break;
+            }
             default:
                 throw new UnsupportedOperationException("Unknown uri " +uri);
         }

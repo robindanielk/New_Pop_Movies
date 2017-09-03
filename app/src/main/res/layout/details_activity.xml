@@ -44,25 +44,13 @@
 
     <include layout="@layout/details_content" />
 
-    <com.github.ivbaranov.mfb.MaterialFavoriteButton
+    <android.support.design.widget.FloatingActionButton
         android:id="@+id/details_material_favorites"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:layout_anchor="@id/details_appbar"
-        app:layout_anchorGravity="bottom|end"
-        app:mfb_animate_favorite="true"               
-        app:mfb_animate_unfavorite="false"               
-        app:mfb_padding="12"                             
-        app:mfb_favorite_image="@drawable/favorite_heart_button"        
-        app:mfb_not_favorite_image="@drawable/ic_favorite_border"
-        app:mfb_rotation_duration="400"                  
-        app:mfb_rotation_angle="360"
-        app:mfb_bounce_duration="300"
-        app:mfb_color="black"
-        app:mfb_type="star"
-        app:mfb_size="48"
-        android:background="@drawable/circle"/>
+        app:layout_anchorGravity="bottom|end"/>
 
 </android.support.design.widget.CoordinatorLayout>
 
