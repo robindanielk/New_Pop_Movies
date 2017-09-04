@@ -70,8 +70,11 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
      public void swapCursor(Cursor favCursor)
      {
 
+
          this.favCursor = favCursor;
-         notifyDataSetChanged();
+         if(favCursor != null) {
+             notifyDataSetChanged();
+         }
      }
 
     public class FavoritesViewHolder extends RecyclerView.ViewHolder {
