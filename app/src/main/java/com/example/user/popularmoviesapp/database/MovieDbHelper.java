@@ -10,27 +10,24 @@ import static com.example.user.popularmoviesapp.database.MovieContract.*;
  * Created by ridsys-001 on 16/8/17.
  */
 
-public class MovieDbHelper extends SQLiteOpenHelper
-{
+public class MovieDbHelper extends SQLiteOpenHelper {
+
     public static final String DATABASE_NAME = "favorites.db";
-
     public static final int DATABASE_VERSION = 6;
-
-    public MovieDbHelper(Context context)
-    {
-        super(context,DATABASE_NAME,null,DATABASE_VERSION);
+    public MovieDbHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         final String CREATE_TABLE_MOVIES = "CREATE TABLE " + MoviesEntry.TABLE_NAME + " (" +
-                        MoviesEntry._ID + " INTEGER PRIMARY KEY, " +
-                        MoviesEntry.COLUMN_MOVIE_ID + " INTEGER, " +
-                        MoviesEntry.COLUMN_MOVIE_TITLE + " TEXT, "  +
-                        MoviesEntry.COLUMN_MOVIE_USER_RATING + " REAL, " +
-                        MoviesEntry.COLUMN_MOVIE_BACKDROP + " TEXT, " +
-                        MoviesEntry.COLUMN_MOVIE_POSTER + " TEXT, "  +
-                        MoviesEntry.COLUMN_MOVIE_RELEASE_DATE + " TEXT " + ")";
+                MoviesEntry._ID + " INTEGER PRIMARY KEY, " +
+                MoviesEntry.COLUMN_MOVIE_ID + " INTEGER, " +
+                MoviesEntry.COLUMN_MOVIE_TITLE + " TEXT, " +
+                MoviesEntry.COLUMN_MOVIE_USER_RATING + " REAL, " +
+                MoviesEntry.COLUMN_MOVIE_BACKDROP + " TEXT, " +
+                MoviesEntry.COLUMN_MOVIE_POSTER + " TEXT, " +
+                MoviesEntry.COLUMN_MOVIE_RELEASE_DATE + " TEXT " + ")";
         db.execSQL(CREATE_TABLE_MOVIES);
     }
 

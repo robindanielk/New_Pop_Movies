@@ -25,19 +25,17 @@ import butterknife.ButterKnife;
  * Created by user on 4/4/2017.
  */
 
-public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHolder>
-{
+public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHolder> {
     private List<Movies> moviesList;
     private Context context;
 
     private static final String TAG = MoviesAdapter.class.getSimpleName();
-    private static final String BASE_URL ="http://image.tmdb.org/t/p/w185/";
+    private static final String BASE_URL = "http://image.tmdb.org/t/p/w185/";
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, final int viewType)
-    {
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, final int viewType) {
         View rootView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.grid_item,parent,false);
+                .inflate(R.layout.grid_item, parent, false);
 
         return new MyViewHolder(rootView);
     }
@@ -56,47 +54,45 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
 
     @Override
     public int getItemCount() {
-        if(null == moviesList){
+        if (null == moviesList) {
             return 0;
         }
         return moviesList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder
-    {
-        @BindView(R.id.gv_image) ImageView image;
-        @BindView(R.id.gv_tv_original_title) TextView originalTitle;
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.gv_image)
+        ImageView image;
+        @BindView(R.id.gv_tv_original_title)
+        TextView originalTitle;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this,itemView);
+            ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int pos = getAdapterPosition();
 
-                    if(pos != RecyclerView.NO_POSITION)
-                    {
+                    if (pos != RecyclerView.NO_POSITION) {
                         Movies selectedMoviesPos = moviesList.get(pos);
-                        Intent intent  = new Intent(context, DetailsActivity.class);
-                        intent.putExtra(Constants.MOVIE_INTENT_ID,selectedMoviesPos);
+                        Intent intent = new Intent(context, DetailsActivity.class);
+                        intent.putExtra(Constants.MOVIE_INTENT_ID, selectedMoviesPos);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         context.startActivity(intent);
-                        Log.d(TAG,"Selected Movie Position " + selectedMoviesPos);
+                        Log.d(TAG, "Selected Movie Position " + selectedMoviesPos);
                     }
                 }
             });
         }
     }
 
-    public MoviesAdapter(Context context, List<Movies> movies)
-    {
+    public MoviesAdapter(Context context, List<Movies> movies) {
         this.context = context;
         this.moviesList = movies;
     }
 
-    public void swapMovies(Context context, List<Movies> movies)
-    {
+    public void swapMovies(Context context, List<Movies> movies) {
         this.context = context;
         this.moviesList = movies;
         notifyDataSetChanged();

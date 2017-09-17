@@ -23,20 +23,20 @@ import butterknife.ButterKnife;
  * Created by ridsys-001 on 4/9/17.
  */
 
-public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.FavoritesViewHolder>
-{
+public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.FavoritesViewHolder> {
     private Cursor favCursor;
 
     private static final String TAG = FavoritesAdapter.class.getSimpleName();
-    private static final String BASE_URL ="http://image.tmdb.org/t/p/w185/";
+    private static final String BASE_URL = "http://image.tmdb.org/t/p/w185/";
 
-    public FavoritesAdapter(){}
+    public FavoritesAdapter() {
+    }
 
     @Override
     public FavoritesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View rootView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.grid_item,parent,false);
+                .inflate(R.layout.grid_item, parent, false);
         return new FavoritesViewHolder(rootView);
     }
 
@@ -56,28 +56,19 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
 
     @Override
     public int getItemCount() {
-        if(favCursor == null){
-        return 0;
+        if (favCursor == null) {
+            return 0;
         }
         return favCursor.getCount();
     }
 
 
-
-
-
-
-     public void swapCursor(Cursor newCursor)
-     {
-
-
-         favCursor = newCursor;
-         if(favCursor != null) {
-
-
-             notifyDataSetChanged();
-         }
-     }
+    public void swapCursor(Cursor newCursor) {
+        favCursor = newCursor;
+        if (favCursor != null) {
+            notifyDataSetChanged();
+        }
+    }
 
     public class FavoritesViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.gv_image)
@@ -88,22 +79,21 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
 
         public FavoritesViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this,itemView);
+            ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent newIntent = new Intent(v.getContext(), DetailsActivity.class);
                     favCursor.moveToPosition(getAdapterPosition());
                     Movies currentMovie = getCurrentMovies();
-                    newIntent.putExtra(Constants.MOVIE_INTENT_ID,currentMovie);
+                    newIntent.putExtra(Constants.MOVIE_INTENT_ID, currentMovie);
                     v.getContext().startActivity(newIntent);
                 }
             });
         }
     }
 
-    private Movies getCurrentMovies()
-    {
+    private Movies getCurrentMovies() {
         Movies moviesList = new Movies();
         moviesList.setId(favCursor.getInt(favCursor.getColumnIndex(MovieContract.MoviesEntry
                 .COLUMN_MOVIE_ID)));
@@ -119,5 +109,4 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
                 .MoviesEntry.COLUMN_MOVIE_POSTER)));
         return moviesList;
     }
-
 }

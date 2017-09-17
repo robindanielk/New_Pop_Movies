@@ -6,8 +6,7 @@ package com.example.user.popularmoviesapp.Helper;
 
 /*Helper Class for all the Constants*/
 
-public class Constants
-{
+public class Constants {
 
     public static final String MOVIE_INTENT_ID = "movies";
     public static final String MOVIE_SAVED_INSTANCE_KEY = "movie_saved_instance";

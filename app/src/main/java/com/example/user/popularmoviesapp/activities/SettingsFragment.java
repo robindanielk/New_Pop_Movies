@@ -18,8 +18,7 @@ import com.example.user.popularmoviesapp.R;
  * Created by user on 7/15/2017.
  */
 
-public class SettingsFragment extends PreferenceFragmentCompat
-{
+public class SettingsFragment extends PreferenceFragmentCompat {
     private static final String LOG_TAG = SettingsFragment.class.getSimpleName();
 
     @Override

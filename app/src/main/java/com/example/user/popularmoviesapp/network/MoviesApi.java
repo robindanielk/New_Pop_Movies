@@ -15,34 +15,29 @@ import retrofit2.http.Path;
 
 /*This is the service class for the network calls*/
 
-public class MoviesApi
-{
-    public interface PopularMovies
-    {
+public class MoviesApi {
+
+    public interface PopularMovies {
         @GET("movie/popular")
         Call<MoviesList> getPopularMovies();
     }
 
-    public interface TopRatedMovies
-    {
+    public interface TopRatedMovies {
         @GET("movie/top_rated")
         Call<MoviesList> getTopRatedMovies();
     }
 
-    public interface MovieDetails
-    {
+    public interface MovieDetails {
         @GET("movie/{movie_id}")
         Call<Movies> getMovieDetails(@Path("movie_id") int id);
     }
 
-    public interface MovieDetailVideos
-    {
+    public interface MovieDetailVideos {
         @GET("movie/{movie_id}/videos")
         Call<MovieVideos> getMovieVideos(@Path("movie_id") int id);
     }
 
-    public interface MovieDetailReviews
-    {
+    public interface MovieDetailReviews {
         @GET("movie/{movie_id}/reviews")
         Call<MovieReviews> getMovieReviews(@Path("movie_id") int id);
     }

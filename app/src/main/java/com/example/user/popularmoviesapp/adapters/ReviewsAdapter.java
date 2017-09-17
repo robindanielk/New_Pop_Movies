@@ -19,47 +19,41 @@ import butterknife.ButterKnife;
  * Created by ridsys-001 on 12/8/17.
  */
 
-public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ReviewsViewHolder>
-{
+public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ReviewsViewHolder> {
+
     private List<MovieReviewResults> reviewResults;
     private Context context;
-
     private static final String TAG = ReviewsAdapter.class.getSimpleName();
 
-    public ReviewsAdapter(Context context,List<MovieReviewResults> reviewResults)
-    {
+    public ReviewsAdapter(Context context, List<MovieReviewResults> reviewResults) {
         this.context = context;
         this.reviewResults = reviewResults;
     }
 
-
     @Override
     public ReviewsAdapter.ReviewsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View rootView = LayoutInflater.from(context)
-                .inflate(R.layout.reviews_layout,parent,false);
+                .inflate(R.layout.reviews_layout, parent, false);
         return new ReviewsViewHolder(rootView);
     }
 
     @Override
     public void onBindViewHolder(ReviewsAdapter.ReviewsViewHolder holder, int position) {
 
-            holder.reviewsAuthor.setText(reviewResults.get(position).getAuthor());
-            holder.reviewsContent.setText(reviewResults.get(position).getContent());
-
+        holder.reviewsAuthor.setText(reviewResults.get(position).getAuthor());
+        holder.reviewsContent.setText(reviewResults.get(position).getContent());
     }
 
     @Override
     public int getItemCount() {
-        if(null == reviewResults)
-        {
-            return 0 ;
+        if (null == reviewResults) {
+            return 0;
         }
         return reviewResults.size();
     }
 
 
-    public class ReviewsViewHolder extends RecyclerView.ViewHolder
-    {
+    public class ReviewsViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.reviews_author)
         TextView reviewsAuthor;
 
@@ -68,7 +62,7 @@ public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ReviewsV
 
         public ReviewsViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this,itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 }

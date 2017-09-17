@@ -17,16 +17,14 @@ public class MovieContract {
     /*Path that needs to be appended to the Base Uri*/
     public static final String PATH_MOVIES = "movies";
 
+    public static final class MoviesEntry implements BaseColumns {
 
-    public static final class MoviesEntry implements BaseColumns
-    {
         public static final Uri CONTENT_URI = BASE_CONTENT_URI.buildUpon()
                 .appendPath(PATH_MOVIES).build();
-
         public static final String CONTENT_TYPE =
                 "vnd.android.cursor.dir/" + CONTENT_URI + "/" + PATH_MOVIES;
         public static final String CONTENT_ITEM_TYPE =
-                "vnd.android.cursor.item/" +CONTENT_URI + "/" + PATH_MOVIES;
+                "vnd.android.cursor.item/" + CONTENT_URI + "/" + PATH_MOVIES;
 
         /*Table Name and Column Names for the Movies Table*/
         public static final String TABLE_NAME = "movies";
@@ -36,6 +34,5 @@ public class MovieContract {
         public static final String COLUMN_MOVIE_RELEASE_DATE = "release_date";
         public static final String COLUMN_MOVIE_BACKDROP = "backdrop";
         public static final String COLUMN_MOVIE_POSTER = "poster";
-
     }
 }
