@@ -25,10 +25,6 @@ import butterknife.ButterKnife;
 
 public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.FavoritesViewHolder>
 {
-
-    @BindView(R.id.tv_empty_tv)
-    TextView emptyTextView;
-
     private Cursor favCursor;
 
     private static final String TAG = FavoritesAdapter.class.getSimpleName();
@@ -46,23 +42,16 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
 
     @Override
     public void onBindViewHolder(FavoritesViewHolder holder, int position) {
-
-        if(favCursor.getCount() == 0 && favCursor == null)
-        {
-            emptyTextView.setText("NO Movies Added as Favorites");
-        }else {
-            favCursor.moveToPosition(position);
-
-            String posterPath = BASE_URL + favCursor.getString(favCursor.getColumnIndex(MovieContract
-                    .MoviesEntry.COLUMN_MOVIE_POSTER));
-            Picasso.with(holder.imageView.getContext())
-                    .load(posterPath)
-                    .error(R.drawable.no_movie_image)
-                    .placeholder(R.drawable.load)
-                    .into(holder.imageView);
-            holder.originalTitle.setText(favCursor.getString(favCursor.getColumnIndex(MovieContract
-                    .MoviesEntry.COLUMN_MOVIE_TITLE)));
-        }
+        favCursor.moveToPosition(position);
+        String posterPath = BASE_URL + favCursor.getString(favCursor.getColumnIndex(MovieContract
+                .MoviesEntry.COLUMN_MOVIE_POSTER));
+        Picasso.with(holder.imageView.getContext())
+                .load(posterPath)
+                .error(R.drawable.no_movie_image)
+                .placeholder(R.drawable.load)
+                .into(holder.imageView);
+        holder.originalTitle.setText(favCursor.getString(favCursor.getColumnIndex(MovieContract
+                .MoviesEntry.COLUMN_MOVIE_TITLE)));
     }
 
     @Override
@@ -78,11 +67,14 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
 
 
 
-     public void swapCursor(Cursor favCursor)
+     public void swapCursor(Cursor newCursor)
      {
 
-         this.favCursor = favCursor;
+
+         favCursor = newCursor;
          if(favCursor != null) {
+
+
              notifyDataSetChanged();
          }
      }
