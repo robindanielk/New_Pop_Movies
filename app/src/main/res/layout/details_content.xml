@@ -16,7 +16,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-
         <include layout="@layout/activity_about"/>
 
         <include layout="@layout/view_divider"/>
